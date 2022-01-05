@@ -1,0 +1,12 @@
+insert into "Genero"("Nome") values ('Luta'), ('Anime'), ('RPG'), ('FPS'), ('Battle Royale'), ('Roguelike')
+insert into "Estudio"("Nome") values ('Arcsystem Works'), ('French Bread'), ('Supergiant Games'), ('Respawn Entertainment');
+
+select * from "Jogo"
+join "GeneroJogo" on "Jogo"."Id" = "GeneroJogo"."JogosId"
+join "Genero" on "Genero"."Id" = "GeneroJogo"."GenerosId"
+join "Estudio" on "Jogo"."IdEstudio" = "Estudio"."Id"
+
+insert into "Jogo"("Nome", "DataCompra", "PrecoCompra", "IdEstudio") values ('Melty Blood', '2021-12-12', 89.99, 2), ('Apex Legends', '2021-10-15', 0, 4), ('Hades', '2022-01-04', 30.75, 3)
+insert into "GeneroJogo"("GenerosId", "JogosId") values (1, 2), (2, 2),(4, 3), (5, 3), (6, 4) 
+
+
